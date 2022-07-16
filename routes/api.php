@@ -23,6 +23,8 @@ Route::namespace('App\Http\Controllers\Api')->prefix('products')->group(function
     Route::get('/{id}','ProductController@show');
     Route::post('/','ProductController@save');
     Route::put('/','ProductController@update');
+    Route::patch('/','ProductController@update');
+    Route::delete('/{id}','ProductController@delete');
 });
 
 
