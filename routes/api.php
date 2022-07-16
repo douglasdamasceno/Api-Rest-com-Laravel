@@ -17,10 +17,12 @@ Route::get("/teste",function (Request $request){
 });
 
 //Products Route
-Route::namespace('App\Http\Controllers\Api')->group(function (){
+Route::namespace('App\Http\Controllers\Api')->prefix('products')->group(function (){
 
-    Route::get("/products",'ProductController@index');
-    Route::post("/products",'ProductController@save');
+    Route::get('/','ProductController@index');
+    Route::get('/{id}','ProductController@show');
+    Route::post('/','ProductController@save');
+    Route::put('/','ProductController@update');
 });
 
 
